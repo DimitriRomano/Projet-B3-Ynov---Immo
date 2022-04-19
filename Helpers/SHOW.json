@@ -1,0 +1,1142 @@
+[
+	{
+		"id": 1,
+		"type_id": 3,
+		"price": 198000,
+		"title": "Property 0",
+		"address": "4868 Wehner Ramp Suite 912\nKutchchester, VA 50947-7491",
+		"description": "Beatae et molestiae harum qui nam aut vel. Atque nihil eveniet saepe eum ea sint. Qui ea non ipsam perferendis dolorem sint.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 63,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 3,
+			"name": "Chalet"
+		},
+		"localisation": {
+			"id": 1,
+			"property_id": 1,
+			"latitude": 66.67,
+			"longitude": 46.08,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 1,
+				"name": "fibre",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 1
+				}
+			},
+			{
+				"id": 2,
+				"name": "parking",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 2
+				}
+			},
+			{
+				"id": 3,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 3
+				}
+			},
+			{
+				"id": 4,
+				"name": "balcon",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 4
+				}
+			},
+			{
+				"id": 5,
+				"name": "terrasse",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 5
+				}
+			},
+			{
+				"id": 6,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 6
+				}
+			},
+			{
+				"id": 7,
+				"name": "piscine",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 7
+				}
+			},
+			{
+				"id": 8,
+				"name": "cheminée",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 1,
+					"feature_id": 8
+				}
+			}
+		]
+	},
+	{
+		"id": 2,
+		"type_id": 2,
+		"price": 273000,
+		"title": "Property 1",
+		"address": "2588 Clement Prairie\nNew Shyanne, AZ 52211-3136",
+		"description": "Dicta voluptatem iusto perferendis omnis alias repellendus. Id voluptatem autem quo qui ex et qui. Molestias iure eveniet id sunt ad explicabo aliquid. Voluptatem et odio voluptates ut. Voluptatem odio eligendi et quasi dolor.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 122,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 2,
+			"name": "Maison"
+		},
+		"localisation": {
+			"id": 2,
+			"property_id": 2,
+			"latitude": 69.45,
+			"longitude": 66.22,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 9,
+				"name": "fibre",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 9
+				}
+			},
+			{
+				"id": 10,
+				"name": "parking",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 10
+				}
+			},
+			{
+				"id": 11,
+				"name": "ascensceur",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 11
+				}
+			},
+			{
+				"id": 12,
+				"name": "balcon",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 12
+				}
+			},
+			{
+				"id": 13,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 13
+				}
+			},
+			{
+				"id": 14,
+				"name": "jardin",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 14
+				}
+			},
+			{
+				"id": 15,
+				"name": "piscine",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 15
+				}
+			},
+			{
+				"id": 16,
+				"name": "cheminée",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 2,
+					"feature_id": 16
+				}
+			}
+		]
+	},
+	{
+		"id": 3,
+		"type_id": 1,
+		"price": 162000,
+		"title": "Property 2",
+		"address": "98122 Runolfsson Flats Suite 791\nEast Effiefort, OR 22156-1123",
+		"description": "Voluptas porro quod dolorem. In exercitationem rerum rerum non quo. Et cum quae est consequuntur harum explicabo.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 110,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 1,
+			"name": "Appartement"
+		},
+		"localisation": {
+			"id": 3,
+			"property_id": 3,
+			"latitude": -74.78,
+			"longitude": 102.96,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 17,
+				"name": "fibre",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 17
+				}
+			},
+			{
+				"id": 18,
+				"name": "parking",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 18
+				}
+			},
+			{
+				"id": 19,
+				"name": "ascensceur",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 19
+				}
+			},
+			{
+				"id": 20,
+				"name": "balcon",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 20
+				}
+			},
+			{
+				"id": 21,
+				"name": "terrasse",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 21
+				}
+			},
+			{
+				"id": 22,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 22
+				}
+			},
+			{
+				"id": 23,
+				"name": "piscine",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 23
+				}
+			},
+			{
+				"id": 24,
+				"name": "cheminée",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 3,
+					"feature_id": 24
+				}
+			}
+		]
+	},
+	{
+		"id": 4,
+		"type_id": 3,
+		"price": 389000,
+		"title": "Property 3",
+		"address": "1979 Hertha Stravenue\nKozeyshire, MN 47925-3517",
+		"description": "Aliquid totam mollitia aspernatur laboriosam distinctio reiciendis aut. Velit non vero qui molestiae iure sunt voluptas. Libero dignissimos omnis enim beatae.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 162,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 3,
+			"name": "Chalet"
+		},
+		"localisation": {
+			"id": 4,
+			"property_id": 4,
+			"latitude": 7.47,
+			"longitude": -19.93,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 25,
+				"name": "fibre",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 25
+				}
+			},
+			{
+				"id": 26,
+				"name": "parking",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 26
+				}
+			},
+			{
+				"id": 27,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 27
+				}
+			},
+			{
+				"id": 28,
+				"name": "balcon",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 28
+				}
+			},
+			{
+				"id": 29,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 29
+				}
+			},
+			{
+				"id": 30,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 30
+				}
+			},
+			{
+				"id": 31,
+				"name": "piscine",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 31
+				}
+			},
+			{
+				"id": 32,
+				"name": "cheminée",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 4,
+					"feature_id": 32
+				}
+			}
+		]
+	},
+	{
+		"id": 5,
+		"type_id": 1,
+		"price": 214000,
+		"title": "Property 4",
+		"address": "70304 Sandy Fork\nSouth Alyce, MA 40127",
+		"description": "Eligendi ut quia omnis omnis. Molestias ut enim exercitationem. Ut ducimus incidunt ut facere. Ut quisquam dolor ut odio sapiente culpa.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 97,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 1,
+			"name": "Appartement"
+		},
+		"localisation": {
+			"id": 5,
+			"property_id": 5,
+			"latitude": 41.73,
+			"longitude": -12.68,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 33,
+				"name": "fibre",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 33
+				}
+			},
+			{
+				"id": 34,
+				"name": "parking",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 34
+				}
+			},
+			{
+				"id": 35,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 35
+				}
+			},
+			{
+				"id": 36,
+				"name": "balcon",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 36
+				}
+			},
+			{
+				"id": 37,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 37
+				}
+			},
+			{
+				"id": 38,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 38
+				}
+			},
+			{
+				"id": 39,
+				"name": "piscine",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 39
+				}
+			},
+			{
+				"id": 40,
+				"name": "cheminée",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 5,
+					"feature_id": 40
+				}
+			}
+		]
+	},
+	{
+		"id": 6,
+		"type_id": 3,
+		"price": 343000,
+		"title": "Property 5",
+		"address": "80154 Jamir Neck\nSouth Napoleon, OR 35170-9854",
+		"description": "Alias similique totam consequatur dolorum minus. Veniam culpa sit dolores ab. Distinctio in quis fuga cum repellendus.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 153,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 3,
+			"name": "Chalet"
+		},
+		"localisation": {
+			"id": 6,
+			"property_id": 6,
+			"latitude": -9.84,
+			"longitude": -58.25,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 41,
+				"name": "fibre",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 41
+				}
+			},
+			{
+				"id": 42,
+				"name": "parking",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 42
+				}
+			},
+			{
+				"id": 43,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 43
+				}
+			},
+			{
+				"id": 44,
+				"name": "balcon",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 44
+				}
+			},
+			{
+				"id": 45,
+				"name": "terrasse",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 45
+				}
+			},
+			{
+				"id": 46,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 46
+				}
+			},
+			{
+				"id": 47,
+				"name": "piscine",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 47
+				}
+			},
+			{
+				"id": 48,
+				"name": "cheminée",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 6,
+					"feature_id": 48
+				}
+			}
+		]
+	},
+	{
+		"id": 7,
+		"type_id": 2,
+		"price": 146000,
+		"title": "Property 6",
+		"address": "891 Parisian Circle Suite 796\nNew Lilyan, SD 63602",
+		"description": "Alias vel ea quis harum modi. Possimus autem distinctio voluptas odio nemo ipsa. Dolor praesentium est ut libero et neque.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 35,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 2,
+			"name": "Maison"
+		},
+		"localisation": {
+			"id": 7,
+			"property_id": 7,
+			"latitude": -79.7,
+			"longitude": 1.12,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 49,
+				"name": "fibre",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 49
+				}
+			},
+			{
+				"id": 50,
+				"name": "parking",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 50
+				}
+			},
+			{
+				"id": 51,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 51
+				}
+			},
+			{
+				"id": 52,
+				"name": "balcon",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 52
+				}
+			},
+			{
+				"id": 53,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 53
+				}
+			},
+			{
+				"id": 54,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 54
+				}
+			},
+			{
+				"id": 55,
+				"name": "piscine",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 55
+				}
+			},
+			{
+				"id": 56,
+				"name": "cheminée",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 7,
+					"feature_id": 56
+				}
+			}
+		]
+	},
+	{
+		"id": 8,
+		"type_id": 1,
+		"price": 83000,
+		"title": "Property 7",
+		"address": "253 Autumn Shores\nSouth Taryn, AL 98932-7970",
+		"description": "Vero cupiditate optio tenetur sed qui rerum. Quae et quae qui unde.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 27,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 1,
+			"name": "Appartement"
+		},
+		"localisation": {
+			"id": 8,
+			"property_id": 8,
+			"latitude": 19.36,
+			"longitude": 127.52,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 57,
+				"name": "fibre",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 57
+				}
+			},
+			{
+				"id": 58,
+				"name": "parking",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 58
+				}
+			},
+			{
+				"id": 59,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 59
+				}
+			},
+			{
+				"id": 60,
+				"name": "balcon",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 60
+				}
+			},
+			{
+				"id": 61,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 61
+				}
+			},
+			{
+				"id": 62,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 62
+				}
+			},
+			{
+				"id": 63,
+				"name": "piscine",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 63
+				}
+			},
+			{
+				"id": 64,
+				"name": "cheminée",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 8,
+					"feature_id": 64
+				}
+			}
+		]
+	},
+	{
+		"id": 9,
+		"type_id": 3,
+		"price": 299000,
+		"title": "Property 8",
+		"address": "3811 Miles Grove\nMcCulloughtown, IN 56668-1486",
+		"description": "Voluptatem soluta id voluptatem unde et. Qui et dolorum consequatur molestias molestias. Atque facilis ut error illo nihil.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 25,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 3,
+			"name": "Chalet"
+		},
+		"localisation": {
+			"id": 9,
+			"property_id": 9,
+			"latitude": -36.92,
+			"longitude": -111.68,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 65,
+				"name": "fibre",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 65
+				}
+			},
+			{
+				"id": 66,
+				"name": "parking",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 66
+				}
+			},
+			{
+				"id": 67,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 67
+				}
+			},
+			{
+				"id": 68,
+				"name": "balcon",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 68
+				}
+			},
+			{
+				"id": 69,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 69
+				}
+			},
+			{
+				"id": 70,
+				"name": "jardin",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 70
+				}
+			},
+			{
+				"id": 71,
+				"name": "piscine",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 71
+				}
+			},
+			{
+				"id": 72,
+				"name": "cheminée",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 9,
+					"feature_id": 72
+				}
+			}
+		]
+	},
+	{
+		"id": 10,
+		"type_id": 3,
+		"price": 321000,
+		"title": "Property 9",
+		"address": "367 Danial Village Apt. 139\nWest Jazmynebury, ID 10043-5658",
+		"description": "Optio nesciunt sit id consequatur in sequi tempora. Molestiae quas ut quasi distinctio suscipit. Explicabo vel voluptas cumque officiis. Est distinctio quos at modi sed autem ipsam.",
+		"image": "https:\/\/i.imgur.com\/rBVJnRk.png",
+		"surface": 183,
+		"created_at": "2022-04-05T22:37:26.000000Z",
+		"updated_at": "2022-04-05T22:37:26.000000Z",
+		"type": {
+			"id": 3,
+			"name": "Chalet"
+		},
+		"localisation": {
+			"id": 10,
+			"property_id": 10,
+			"latitude": 82.46,
+			"longitude": -164.08,
+			"created_at": "2022-04-05T22:37:26.000000Z",
+			"updated_at": "2022-04-05T22:37:26.000000Z"
+		},
+		"features": [
+			{
+				"id": 73,
+				"name": "fibre",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 73
+				}
+			},
+			{
+				"id": 74,
+				"name": "parking",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 74
+				}
+			},
+			{
+				"id": 75,
+				"name": "ascensceur",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 75
+				}
+			},
+			{
+				"id": 76,
+				"name": "balcon",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 76
+				}
+			},
+			{
+				"id": 77,
+				"name": "terrasse",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 77
+				}
+			},
+			{
+				"id": 78,
+				"name": "jardin",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 78
+				}
+			},
+			{
+				"id": 79,
+				"name": "piscine",
+				"value": "0",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 79
+				}
+			},
+			{
+				"id": 80,
+				"name": "cheminée",
+				"value": "1",
+				"created_at": "2022-04-05T22:37:26.000000Z",
+				"updated_at": "2022-04-05T22:37:26.000000Z",
+				"pivot": {
+					"property_id": 10,
+					"feature_id": 80
+				}
+			}
+		]
+	}
+]

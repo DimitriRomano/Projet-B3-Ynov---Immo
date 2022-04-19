@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import TabOneScreen from './ListProperties';
 
 export default function Home() {
   return (
     <View style={styles.container}>
-      <Text style={styles.mytext}>Home screen</Text>
+      <TabOneScreen />
       <StatusBar style="auto" />
     </View>
   );
@@ -13,11 +14,8 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#212120',
+    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  mytext: {
-    color: '#fff'
-  }
 });
