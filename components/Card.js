@@ -35,21 +35,7 @@ import { getProperties } from "../API/YmobilierApi";
   
     const handleFavoriteItemClicked = () => {
       setFavoriteItem(!favoriteItem);
-      testApi();
     };
-
-    const testApi = () => {
-        getProperties().then(res => {
-            console.log(JSON.stringify(res));
-        }).catch(err => {
-            console.log('test error' + err);
-        }).finally(() => {
-            console.log('test finally');
-        });
-        console.log("testApi");
-      
-      }; 
-
 
     
   
@@ -70,7 +56,7 @@ import { getProperties } from "../API/YmobilierApi";
           data={images}
           horizontal
           showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item}
+          keyExtractor={(item) => item.id}
           ref={(ref) => (flatListRef.current = ref)}
           snapToAlignment="center"
           pagingEnabled
@@ -78,7 +64,7 @@ import { getProperties } from "../API/YmobilierApi";
           onViewableItemsChanged={onViewRef.current}
           renderItem={({ item }) => (
             <Pressable onPress={onPress} style={styles.imageContainer}>
-              <Image style={styles.image} source={{ uri: item }} />
+              <Image style={styles.image} source={{ uri: item.url }} />
             </Pressable>
           )}
         />
@@ -103,10 +89,10 @@ import { getProperties } from "../API/YmobilierApi";
         <Pressable onPress={onPress} style={styles.textContainer}>
           <View style={styles.starContainer}>
             <Ionicons name="star" size={16} color="#FF5A5F" />
-            <Text style={styles.starText}>{stars}</Text>
+            <Text style={styles.starText}>{stars} m²</Text>
           </View>
           <Text style={styles.heading}>{heading}</Text>
-          <Text style={styles.subheading}>${subheading}/night</Text>
+          <Text style={styles.subheading}>{subheading}€</Text>
         </Pressable>
       </View>
     );

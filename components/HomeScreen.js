@@ -1,11 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import TabOneScreen from './ListProperties';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import ListProperties from './ListProperties';
+import { useNavigation } from '@react-navigation/native';
+
 
 export default function Home() {
+  const navigation = useNavigation();
+
   return (
-    <View style={styles.container}>
-      <TabOneScreen />
+    <View style={styles.container}>  
+      <ListProperties />
       <StatusBar style="auto" />
     </View>
   );
