@@ -47,7 +47,7 @@ const PropertyDetail = ({navigation, route}) => {
             {isLoading ? <ActivityIndicator/> :
             <ScrollView>
                 <View style={style.backgroundImageContainer}>
-                    <ImageBackground style={style.backgrounImage} source={{uri : data.image }}>
+                    <ImageBackground style={style.backgrounImage} source={{uri : data.main_image }}>
                                 <Pressable
                                     onPress={() => handleFavoriteItemClicked}
                                     style={style.header}
@@ -61,7 +61,7 @@ const PropertyDetail = ({navigation, route}) => {
                                 </Pressable>
                     </ImageBackground>
                     <View style={style.typeProp}>
-                        <Text>House</Text> 
+                        <Text>{data.type.name}</Text> 
                     </View>
                 </View>
                 <View style={style.detailsContainer}>
@@ -105,13 +105,14 @@ const style = StyleSheet.create({
     },
     typeProp: {
         top: -20,
-        width: 120,
+        width: 150,
         backgroundColor: 'white',
         paddingHorizontal: 20,
-        height:40,
+        height: 40,
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
+
     },
     detailsContainer: {
         flex: 1,

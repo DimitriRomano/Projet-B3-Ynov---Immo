@@ -2,7 +2,7 @@ const email = "admin@test.com"
 const password = "admin"
 
 const bearer = '1|IVXvH1cJWFZ1h4EhTQx55pWpM97CAJMAg9SuWYtF'
-const oldIp = '10.31.32.196:8000'
+export const oldIp = '10.31.32.196:8000'
 const ipHome = '192.168.137.1:8000'
 
 export const getProperties = async () => {

@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import Home from "../components/HomeScreen";
 import Favorite from "../components/FavoriteScreen";
+import LogIn, { LoginScreen } from "../components/LogIn";
 import PropertyDetail from "../components/PropertyDetail";
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -25,6 +26,14 @@ function FavoriteStack() {
         <Stack.Navigator>
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="Home" component={Home} />
+        </Stack.Navigator>
+    )
+}
+
+function LoginStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Login" component={LogIn} />
         </Stack.Navigator>
     )
 }
@@ -65,7 +74,7 @@ export default function YmobilierTab(){
                 />
                 <Tab.Screen
                     name="Loggin"
-                    component={FavoriteStack}
+                    component={LoginStack}
                     options={
                         {
                             tabBarLabel: 'Loggin',
