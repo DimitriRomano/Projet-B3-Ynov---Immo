@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
   KeyboardAvoidingView,
 } from "react-native";
-import { oldIp } from "../API/YmobilierApi";
+import { oldIp, ipHome } from "../API/YmobilierApi";
 import { useStore } from "../Store/zustandStore";
 
 const LogIn = () => {
@@ -48,7 +48,7 @@ const LogIn = () => {
     }
     formBody = formBody.join("&");
 
-    fetch(`http://${oldIp}/api/login`, {
+    fetch(`http://${ipHome}/api/login`, {
       method: "POST",
       body: formBody,
       headers: {

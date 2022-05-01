@@ -14,7 +14,8 @@ export default function ListProperties() {
   const getListProperties =  () => {
     getProperties().then(res => {
       setData(res);
-      //console.log(data);
+      console.log(data
+        );
     }).catch(err => {
       console.log('test error' + err);
     }).finally(() => {
