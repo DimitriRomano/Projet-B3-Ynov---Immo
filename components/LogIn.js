@@ -5,7 +5,7 @@ import {
   View,
   Text,
   ScrollView,
-  Image,
+  Image, 
   Keyboard,
   TouchableOpacity,
   KeyboardAvoidingView,
@@ -16,7 +16,6 @@ import { useStore } from "../Store/zustandStore";
 const LogIn = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
-//   const [bearer, setBearer] = useState("");
   const  [bearer, setBearer] = useStore((state) =>[ state.bearer, state.setBearer]);
   const [loading, setLoading] = useState(false);
   const [errortext, setErrortext] = useState("");
@@ -48,7 +47,7 @@ const LogIn = () => {
     }
     formBody = formBody.join("&");
 
-    fetch(`http://${ipHome}/api/login`, {
+    fetch(`http://${oldIp}/api/login`, {
       method: "POST",
       body: formBody,
       headers: {

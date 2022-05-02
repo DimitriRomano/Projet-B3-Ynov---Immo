@@ -3,19 +3,19 @@ import Card from "./Card";
 import { getProperties } from "../API/YmobilierApi";
 import React, { useEffect, useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
+import { useStore } from "../Store/zustandStore";
 
 
 
 export default function ListProperties() {
   const [data, setData] = useState([]);
   const [isLoading, setLoading] = useState(true);
+  const  [bearer, setBearer] = useStore((state) =>[ state.bearer, state.setBearer]);
   const navigation = useNavigation();
   
   const getListProperties =  () => {
-    getProperties().then(res => {
+    getProperties(bearer).then(res => {
       setData(res);
-      console.log(data
-        );
     }).catch(err => {
       console.log('test error' + err);
     }).finally(() => {
@@ -26,7 +26,11 @@ export default function ListProperties() {
 
   useEffect(() => {
     getListProperties();
-  }, []);
+    console.log(bearer);
+    if(bearer){
+      console.log('test bearer');
+    }
+  }, [bearer]);
 
 
   return (

@@ -1,13 +1,12 @@
 const email = "admin@test.com"
 const password = "admin"
 
-const bearer = '19|IhmiimiWGhdCwOXThkkHsfY33eJG6AP6X9qGbVa5'
 export const oldIp = '10.31.32.196:8000'
 export const ipHome = '192.168.1.13:8000'
 
-export const getProperties = async () => {
+export const getProperties = async (bearer) => {
     try {
-        const res = await fetch(`http://${ipHome}/api/admin/properties`, {
+        const res = await fetch(`http://${oldIp}/api/admin/properties`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${bearer}`,
@@ -22,9 +21,9 @@ export const getProperties = async () => {
     }
 }
 
-export const detailProperty = async (id) => {
+export const detailProperty = async (id,bearer) => {
     try {
-        const res = await fetch(`http://${ipHome}/api/admin/properties/${id}`, {
+        const res = await fetch(`http://${oldIp}/api/admin/properties/${id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${bearer}`,
