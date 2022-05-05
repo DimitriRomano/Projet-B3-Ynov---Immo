@@ -7,14 +7,16 @@ import Favorite from "../components/FavoriteScreen";
 import LogIn, { LoginScreen } from "../components/LogIn";
 import PropertyDetail from "../components/PropertyDetail";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import useStore, { isAuthenticated } from "../Store/zustandStore";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
+
 function HomeStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} />
+            <Stack.Screen name="Home" component={Home}  />
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="PropertyDetail" component={PropertyDetail} />
         </Stack.Navigator>
@@ -39,8 +41,10 @@ function LoginStack() {
 }
 
 export default function YmobilierTab(){
+    const authed = isAuthenticated()
     return (
         <NavigationContainer>
+            {authed ? 
             <Tab.Navigator
                 screenOptions={
                     {tabBarActiveBackgroundColor: '#DDDDDD', 
@@ -48,6 +52,7 @@ export default function YmobilierTab(){
                     }
                 }
             >
+              
                 <Tab.Screen 
                     name="HomeTabScreen" 
                     component={HomeStack}
@@ -71,22 +76,27 @@ export default function YmobilierTab(){
                     },
                     tabBarShowLabel: false,
                 }}
-                />
-                <Tab.Screen
-                    name="Loggin"
-                    component={LoginStack}
-                    options={
-                        {
-                            tabBarLabel: 'Loggin',
-                            headerShown: false,
-                            tabBarIcon: () => {
-                                return <Ionicons name="person-circle-outline" color={"black"} size={24} />
-                            },
-                            tabBarShowLabel: false,
-                    }
-                }
-                />
+                /> 
+    
             </Tab.Navigator>
+            :
+            <Tab.Navigator>
+                <Tab.Screen
+                        name="Loggin"
+                        component={LoginStack}
+                        options={
+                            {
+                                tabBarLabel: 'Loggin',
+                                headerShown: false,
+                                tabBarIcon: () => {
+                                    return <Ionicons name="person-circle-outline" color={"black"} size={24} />
+                                },
+                                tabBarShowLabel: false,
+                            }
+                        }
+                    /> 
+            </Tab.Navigator>
+                    }
         </NavigationContainer>
     )
 }

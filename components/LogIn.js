@@ -47,7 +47,7 @@ const LogIn = () => {
     }
     formBody = formBody.join("&");
 
-    fetch(`http://${oldIp}/api/login`, {
+    fetch(`${ipHome}/api/login`, {
       method: "POST",
       body: formBody,
       headers: {
@@ -63,7 +63,6 @@ const LogIn = () => {
         // If server response message same as Data Matched
         if (responseJson.access_token) {
             setBearer(responseJson.access_token);
-            console.log(bearer);
           //console.log(responseJson);
           //navigation.replace("DrawerNavigationRoutes");
         } else {

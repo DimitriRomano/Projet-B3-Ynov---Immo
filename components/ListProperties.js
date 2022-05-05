@@ -2,7 +2,7 @@ import { View, Image, FlatList, ActivityIndicator } from "react-native";
 import Card from "./Card";
 import { getProperties } from "../API/YmobilierApi";
 import React, { useEffect, useState } from 'react';
-import { useNavigation } from "@react-navigation/native";
+import { useIsFocused, useNavigation } from "@react-navigation/native";
 import { useStore } from "../Store/zustandStore";
 
 
@@ -12,25 +12,23 @@ export default function ListProperties() {
   const [isLoading, setLoading] = useState(true);
   const  [bearer, setBearer] = useStore((state) =>[ state.bearer, state.setBearer]);
   const navigation = useNavigation();
+  const isFocused = useIsFocused();
   
   const getListProperties =  () => {
     getProperties(bearer).then(res => {
       setData(res);
+    //   console.log('test' + res);
     }).catch(err => {
       console.log('test error' + err);
     }).finally(() => {
-      //console.log('test finally');
       setLoading(false);
     });
   }
 
+
   useEffect(() => {
     getListProperties();
-    console.log(bearer);
-    if(bearer){
-      console.log('test bearer');
-    }
-  }, [bearer]);
+  }, [bearer, isFocused]);
 
 
   return (
@@ -38,19 +36,20 @@ export default function ListProperties() {
       {isLoading ? <ActivityIndicator/> :
       <FlatList
         data={data}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item,index) => item.id}
         showsVerticalScrollIndicator={false}
         renderItem={({ item, index }) => (
           <Card
-            containerStyle={{ backgroundColor: index % 2 == 0  ? "#f2f2f2" : "#FFFFFF" }}
+            id={item.id}
             heading={item.title}
             images={item.images}
             subheading={item.price}
             stars={item.surface}
-            favorite={1}
+            favorite={item.is_favorite}
             onPress={() => 
               navigation.navigate("PropertyDetail", {
                 id: item.id,
+                isFavorite : data[index].is_favorite,
               })
             }
           />

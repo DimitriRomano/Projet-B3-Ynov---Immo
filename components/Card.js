@@ -7,13 +7,15 @@ import {
     Dimensions,
     Pressable,
   } from "react-native";
-  import { useState, useRef } from "react";
+  import { useState, useRef, useEffect } from "react";
   import { Ionicons } from "@expo/vector-icons";
-import { getProperties } from "../API/YmobilierApi";
+import { addFavorite, getProperties, toggleFavorite } from "../API/YmobilierApi";
+import { useStore } from "../Store/zustandStore";
   const HEIGHT = 225;
   const WIDTH = Dimensions.get("window").width;
   
   export default function Card({
+    id,
     images,
     heading,
     subheading,
@@ -26,6 +28,7 @@ import { getProperties } from "../API/YmobilierApi";
     const flatListRef = useRef(null);
     const viewConfigRef = { viewAreaCoveragePercentThreshold: 95 };
     const [activeIndex, setActiveIndex] = useState(0);
+    const [bearer, setBearer] = useStore((state) => [state.bearer, state.setBearer]);
     const onViewRef = useRef(({ changed }) => {
       if (changed[0].isViewable) {
         setActiveIndex(changed[0].index);
@@ -34,8 +37,17 @@ import { getProperties } from "../API/YmobilierApi";
     const [favoriteItem, setFavoriteItem] = useState(favorite);
   
     const handleFavoriteItemClicked = () => {
-      setFavoriteItem(!favoriteItem);
+        toggleFavorite(bearer, id).then(res => {
+          console.log(res);
+        }).catch(err => {
+          console.log('test error' + err);
+        }
+      );
     };
+
+    
+
+    
 
     
   

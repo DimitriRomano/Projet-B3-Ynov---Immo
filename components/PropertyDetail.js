@@ -2,43 +2,73 @@ import React from "react";
 import { View, StyleSheet, ImageBackground, Text, ActivityIndicator, Pressable, Image, Dimensions, TouchableHighlight } from "react-native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
-import { detailProperty } from "../API/YmobilierApi";
+import { detailProperty, toggleFavorite } from "../API/YmobilierApi";
 import { useState, useEffect } from "react";
+import { useStore } from "../Store/zustandStore";
+import { ipHome } from "../API/YmobilierApi";
+
 
 const { width } = Dimensions.get('window');
 
 const PropertyDetail = ({navigation, route}) => {
-    let favorite = false;
     const [data, setData] = useState([]);
     const [isLoading, setLoading] = useState(true);
     const itemId  = route.params.id;
-    const [favoriteItem, setFavoriteItem] = useState(favorite);
+    const [favoriteItem, setFavoriteItem] = useState(route.params.isFavorite);
+    const [bearer, setBearer] = useStore((state) =>[ state.bearer, state.setBearer]);
+
 
     const InteriorImage = ({image}) => {
         return <Image source={{uri : image.url}} style={style.interiorImage} />
     }
 
-    const handleFavoriteItemClicked = () => {
-        setFavoriteItem(!favoriteItem);
-        // console.log('ok');
+    const FeatureRender = ({item}) => {
+        return( <View style={style.facility}>
+            <Image source={{uri : ipHome+item.icon}} style={{ height: 20, width:20 }} />
+            <Text style={style.facilityText}>{item.name}</Text>
+            </View>
+            )
+        }
 
-      };
+    const getFeatureType = (features,type) => {
+        const result = features.filter(feature => feature.category_features_id === type)
+        return result;
+        }
+
+    const AllFeatures = ({f,i})=>{
+        const data = getFeatureType(f,i).map(item => <FeatureRender key={item.id} item={item} />);
+        return (
+            (data.length > 0) ?
+            
+            <View style={{ marginTop: 20, flexDirection:'column' }}>
+                <Text style={{ fontSize: 16, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 }}>{data[0].props.item.category_features.name}</Text>
+                <View style={{ flexDirection: 'row', flexWrap:'wrap' }}>
+                    {data}
+                </View>
+            </View>
+            : null
+            )     
+     } 
+        
+    const handleFavoriteItemClicked = () => {
+            toggleFavorite(data.id,bearer).then(
+                setFavoriteItem(!favoriteItem)
+            );
+    };
 
     const getPropertyDetail = (itemId) => {
-        detailProperty(itemId).then(res => {
+        detailProperty(itemId,bearer).then(res => {
             setData(res);
-            // console.log(data);
         }).catch(err => {
             console.log('error log property ' + err);
         }).finally(() => {
-            console.log('page property detail loaded');
             setLoading(false);
         });
     }
 
     useEffect(() => {
         getPropertyDetail(itemId);
-    }, []);
+    }, [favoriteItem]);
 
 
 
@@ -81,25 +111,35 @@ const PropertyDetail = ({navigation, route}) => {
                     </View>
                     <Text style={{ fontSize:16, color: 'grey' }}>{data.address}</Text>
                     {/* features @TODO à revoir pour api */}
-                    <View style={{ marginTop: 20, flexDirection: 'row' }}>
-                        <View style={style.facility}>
-                            <Text style={style.facilityText}>2</Text>    
+                    {/* {
+                        getFeatureType(data.features,3).length > 0 ?
+                        <View style={{ marginTop: 20}}>
+                            <Text style={{ fontSize: 16, fontWeight: 'bold', textAlign: 'center', marginBottom: 10 }}>Calme et Situation</Text>
+                            <FlatList
+                            data={getFeatureType(data.features,3)}
+                            renderItem={({item}) => <FeatureRender item={item} />
+                            }
+                            numColumns={2}
+                            />
                         </View>
-                        <View style={style.facility}>
-                            <Text style={style.facilityText}>2</Text>    
-                        </View>
-                        <View style={style.facility}>
-                            <Ionicons name="card-outline" size={18} color="grey" />
-                            <Text style={style.facilityText}>100m area</Text>    
-                        </View>
-                    </View>
+                        : null
+                    } */}
+                    <AllFeatures f={data.features} i={1}/>
+                    <AllFeatures f={data.features} i={2}/>
+                    <AllFeatures f={data.features} i={3}/>
+                    <AllFeatures f={data.features} i={4}/>
+
+
+
+
+                    {/* Description */}
                     <Text style={{ marginTop: 20, color: 'grey' }}>{data.description}</Text>
                     <FlatList 
-                        keyExtractor={(_, key)=> key.toString()}
-                        data={data.images} 
-                        horizontal showsHorizontalScrollIndicator={false}
-                        renderItem={({item}) => <InteriorImage image={item}/>}
-                        contentContainerStyle={{ marginTop: 20 }}
+                    keyExtractor={(_, key)=> key.toString()}
+                    data={data.images} 
+                    horizontal showsHorizontalScrollIndicator={false}
+                    renderItem={({item}) => <InteriorImage image={item}/>}
+                    contentContainerStyle={{ marginTop: 20 }}
                     />
                 </View>
                 <View style={style.footer}>
