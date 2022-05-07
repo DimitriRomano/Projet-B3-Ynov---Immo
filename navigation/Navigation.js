@@ -50,11 +50,9 @@ function LoginStack() {
 }
 
 export default function YmobilierTab(){
-    //const authed = isAuthenticated();
-    const test = false;
+    const authed = isAuthenticated();
     return (
         <NavigationContainer>
-            {test ? 
             <Tab.Navigator
                 screenOptions={
                     {tabBarActiveBackgroundColor: '#DDDDDD', 
@@ -62,11 +60,12 @@ export default function YmobilierTab(){
                     }
                 }
             >
-              
+            {authed ? (
+                <>
                 <Tab.Screen 
                     name="HomeTabScreen" 
                     component={HomeStack}
-                    options={{
+                    optidons={{
                         tabBarLabel: 'Home',
                         headerShown: false,
                         tabBarIcon: () => {
@@ -99,10 +98,10 @@ export default function YmobilierTab(){
                     tabBarShowLabel: false,
                 }}
                 />
-    
-            </Tab.Navigator>
-            :
-            <Tab.Navigator>
+                </>
+            )
+            : (
+                <>
                 <Tab.Screen
                         name="Loggin"
                         component={LoginStack}
@@ -117,8 +116,10 @@ export default function YmobilierTab(){
                             }
                         }
                     /> 
+                </>
+            )
+                }
             </Tab.Navigator>
-                    }
         </NavigationContainer>
     )
 }
