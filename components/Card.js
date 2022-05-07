@@ -10,7 +10,7 @@ import {
   import { useState, useRef, useEffect } from "react";
   import { Ionicons } from "@expo/vector-icons";
 import { addFavorite, getProperties, toggleFavorite } from "../API/YmobilierApi";
-import { useStore } from "../Store/zustandStore";
+import { useStore } from "../store/zustandStore";
   const HEIGHT = 225;
   const WIDTH = Dimensions.get("window").width;
   

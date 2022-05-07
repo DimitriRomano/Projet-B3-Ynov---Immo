@@ -4,7 +4,7 @@ import { FlatList, ScrollView } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
 import { detailProperty, toggleFavorite } from "../API/YmobilierApi";
 import { useState, useEffect } from "react";
-import { useStore } from "../Store/zustandStore";
+import { useStore } from "../store/zustandStore";
 import { ipHome } from "../API/YmobilierApi";
 
 
@@ -28,7 +28,7 @@ const PropertyDetail = ({navigation, route}) => {
             <Text style={style.facilityText}>{item.name}</Text>
             </View>
             )
-        }
+    }
 
     const getFeatureType = (features,type) => {
         const result = features.filter(feature => feature.category_features_id === type)

@@ -21,6 +21,6 @@ export const useStore = create(
 
 export function isAuthenticated() {
     const bearer = useStore((state) =>state.bearer);
-    return bearer !== undefined;
+    return false;
 } 
 

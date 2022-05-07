@@ -3,7 +3,7 @@ import Card from "./Card";
 import { getProperties } from "../API/YmobilierApi";
 import React, { useEffect, useState } from 'react';
 import { useIsFocused, useNavigation } from "@react-navigation/native";
-import { useStore } from "../Store/zustandStore";
+import { useStore } from "../store/zustandStore";
 
 
 
@@ -17,7 +17,7 @@ export default function ListProperties() {
   const getListProperties =  () => {
     getProperties(bearer).then(res => {
       setData(res);
-    //   console.log('test' + res);
+      //console.log(res);
     }).catch(err => {
       console.log('test error' + err);
     }).finally(() => {

@@ -4,10 +4,11 @@ import { NavigationContainer } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
 import Home from "../components/HomeScreen";
 import Favorite from "../components/FavoriteScreen";
-import LogIn, { LoginScreen } from "../components/LogIn";
+import LogIn from "../components/LogIn";
+import Profile from "../components/ProfileScreen";
 import PropertyDetail from "../components/PropertyDetail";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import useStore, { isAuthenticated } from "../Store/zustandStore";
+import { isAuthenticated } from "../store/zustandStore";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -19,6 +20,14 @@ function HomeStack() {
             <Stack.Screen name="Home" component={Home}  />
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="PropertyDetail" component={PropertyDetail} />
+        </Stack.Navigator>
+    )
+}
+
+function ProfileStack() {
+    return (
+        <Stack.Navigator>
+            <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
     )
 }
@@ -41,10 +50,11 @@ function LoginStack() {
 }
 
 export default function YmobilierTab(){
-    const authed = isAuthenticated()
+    //const authed = isAuthenticated();
+    const test = false;
     return (
         <NavigationContainer>
-            {authed ? 
+            {test ? 
             <Tab.Navigator
                 screenOptions={
                     {tabBarActiveBackgroundColor: '#DDDDDD', 
@@ -76,7 +86,19 @@ export default function YmobilierTab(){
                     },
                     tabBarShowLabel: false,
                 }}
-                /> 
+                />
+                <Tab.Screen
+                name="ProfileTabScreen" 
+                component={ProfileStack}
+                options={{
+                    tabBarLabel: 'Profile',
+                    headerShown: false,
+                    tabBarIcon: () => {
+                        return <Ionicons name="ios-person" color={"black"} size={24} />
+                    },
+                    tabBarShowLabel: false,
+                }}
+                />
     
             </Tab.Navigator>
             :
