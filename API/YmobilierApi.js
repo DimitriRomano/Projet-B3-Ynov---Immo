@@ -2,12 +2,12 @@ const email = "admin@test.com"
 const password = "admin"
 
 export const oldIp = '10.31.32.196:8000'
-export const ipHome = 'https://8c96-2a01-cb19-8374-7700-d1e3-7640-6c1e-be8b.eu.ngrok.io'
+export const ipHome = 'https://a113-2a01-cb19-8374-7700-cce1-f88e-493b-c36a.eu.ngrok.io'
 //const bearer = '2|3IBWlMBu8MDoIr4og5zanVMLQ1h2CeyICVSQQAcb'
 
 export const getProperties = async (bearer) => {
     try {
-        const res = await fetch(`${ipHome}/api/admin/properties`, {
+        const res = await fetch(`${ipHome}/api/properties`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${bearer}`,
@@ -24,7 +24,7 @@ export const getProperties = async (bearer) => {
 
 export const detailProperty = async (id,bearer) => {
     try {
-        const res = await fetch(`${ipHome}/api/admin/properties/${id}`, {
+        const res = await fetch(`${ipHome}/api/properties/${id}`, {
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${bearer}`,
@@ -50,7 +50,7 @@ export const toggleFavorite = async (id,bearer) => {
             }
         })
         let responJson = await res.json();
-        console.log(responJson);
+        //console.log(responJson);
         return responJson;
     } catch (err) {
         return console.error(err);
