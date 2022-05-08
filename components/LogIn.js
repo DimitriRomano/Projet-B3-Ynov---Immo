@@ -11,7 +11,7 @@ import {
   KeyboardAvoidingView,
 } from "react-native";
 import { oldIp, ipHome } from "../API/YmobilierApi";
-import { useStore } from "../Store/zustandStore";
+import { useStore } from "../store/zustandStore";
 
 const LogIn = () => {
   const [userEmail, setUserEmail] = useState("");

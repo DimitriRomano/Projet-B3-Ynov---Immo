@@ -11,6 +11,7 @@ export const useStore = create(
         properties: [],
         setBearer: bearer => set(state => ({ bearer: state.bearer = bearer })),
         setProperties: properties => set(state => ({ properties: state.properties = properties })),
+        logOut: () => set(state => ({ bearer: state.bearer = undefined })),
         }),
         {
             name: 'bearer-storage',

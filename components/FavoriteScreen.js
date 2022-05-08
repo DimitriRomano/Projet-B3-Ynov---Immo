@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import { useState, useEffect } from 'react';
-import { useStore } from '../Store/zustandStore';
+import { useStore } from '../store/zustandStore';
 import { getFavorites } from '../API/YmobilierApi';
 import { ActivityIndicator } from 'react-native';
 import { useIsFocused, useNavigation } from '@react-navigation/native';

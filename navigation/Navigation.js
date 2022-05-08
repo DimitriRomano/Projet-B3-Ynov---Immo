@@ -1,31 +1,46 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button, TouchableHighlight, View, Text } from "react-native";
 import Home from "../components/HomeScreen";
 import Favorite from "../components/FavoriteScreen";
-import LogIn, { LoginScreen } from "../components/LogIn";
+import LogIn from "../components/LogIn";
+import Profile from "../components/ProfileScreen";
 import PropertyDetail from "../components/PropertyDetail";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import useStore, { isAuthenticated } from "../Store/zustandStore";
+import { isAuthenticated } from "../store/zustandStore";
+import { useState } from "react";
+import { useStore } from "../store/zustandStore";
+import { logOut } from "../API/YmobilierApi";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
+
 function HomeStack() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home}  />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="PropertyDetail" component={PropertyDetail} />
         </Stack.Navigator>
     )
 }
 
+function ProfileStack() {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+    )
+}
+
+
+
 function FavoriteStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
@@ -41,10 +56,10 @@ function LoginStack() {
 }
 
 export default function YmobilierTab(){
-    const authed = isAuthenticated()
+    const [bearer, setBearer] = useStore((state) => [state.bearer, state.setBearer]);
+    const authed = isAuthenticated();
     return (
         <NavigationContainer>
-            {authed ? 
             <Tab.Navigator
                 screenOptions={
                     {tabBarActiveBackgroundColor: '#DDDDDD', 
@@ -52,7 +67,8 @@ export default function YmobilierTab(){
                     }
                 }
             >
-              
+            {authed ? (
+                <>
                 <Tab.Screen 
                     name="HomeTabScreen" 
                     component={HomeStack}
@@ -76,11 +92,23 @@ export default function YmobilierTab(){
                     },
                     tabBarShowLabel: false,
                 }}
-                /> 
-    
-            </Tab.Navigator>
-            :
-            <Tab.Navigator>
+                />
+                <Tab.Screen
+                name="ProfileTabScreen" 
+                component={ProfileStack}
+                options={{
+                    tabBarLabel: 'Profile',
+                    headerShown: false,
+                    tabBarIcon: () => {
+                        return <Ionicons name="ios-person" color={"black"} size={24} />
+                    },
+                    tabBarShowLabel: false,
+                }}
+                />
+                </>
+            )
+            : (
+                <>
                 <Tab.Screen
                         name="Loggin"
                         component={LoginStack}
@@ -95,8 +123,10 @@ export default function YmobilierTab(){
                             }
                         }
                     /> 
+                </>
+            )
+                }
             </Tab.Navigator>
-                    }
         </NavigationContainer>
     )
 }
@@ -105,7 +135,11 @@ const styles = StyleSheet.create({
         icon: {
           width: 30,
           height: 30
-        }
+        },
+        deconnect: {
+            borderRadius: 10,
+            padding: 10,
+        },
 })
 
 

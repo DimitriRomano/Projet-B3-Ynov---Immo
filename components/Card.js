@@ -10,12 +10,13 @@ import {
   import { useState, useRef, useEffect } from "react";
   import { Ionicons } from "@expo/vector-icons";
 import { addFavorite, getProperties, toggleFavorite } from "../API/YmobilierApi";
-import { useStore } from "../Store/zustandStore";
+import { useStore } from "../store/zustandStore";
   const HEIGHT = 225;
   const WIDTH = Dimensions.get("window").width;
   
   export default function Card({
     id,
+    main_image,
     images,
     heading,
     subheading,
@@ -37,8 +38,8 @@ import { useStore } from "../Store/zustandStore";
     const [favoriteItem, setFavoriteItem] = useState(favorite);
   
     const handleFavoriteItemClicked = () => {
-        toggleFavorite(bearer, id).then(res => {
-          console.log(res);
+        toggleFavorite(id,bearer).then(res => {
+          setFavoriteItem(!favoriteItem);
         }).catch(err => {
           console.log('test error' + err);
         }
@@ -64,22 +65,24 @@ import { useStore } from "../Store/zustandStore";
           />
         </Pressable>
         {/* Images */}
-        <FlatList
-          data={images}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item.id}
-          ref={(ref) => (flatListRef.current = ref)}
-          snapToAlignment="center"
-          pagingEnabled
-          viewabilityConfig={viewConfigRef}
-          onViewableItemsChanged={onViewRef.current}
-          renderItem={({ item }) => (
-            <Pressable onPress={onPress} style={styles.imageContainer}>
-              <Image style={styles.image} source={{ uri: item.url }} />
-            </Pressable>
-          )}
-        />
+        <View>
+          <FlatList
+            data={images}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id}
+            ref={(ref) => (flatListRef.current = ref)}
+            snapToAlignment="center"
+            pagingEnabled
+            viewabilityConfig={viewConfigRef}
+            onViewableItemsChanged={onViewRef.current}
+            renderItem={({ item }) => (
+              <Pressable onPress={onPress} style={styles.imageContainer}>
+                <Image style={styles.image} source={{ uri: item.url }} />
+              </Pressable>
+            )}
+          />
+        </View>
         {/*  Dot Container */}
         {images.length > 1 && (
           <View style={styles.dotContainer}>
@@ -113,15 +116,17 @@ import { useStore } from "../Store/zustandStore";
   const styles = StyleSheet.create({
     cardContainer: {
       marginTop: 20,
-      paddingHorizontal: 30,
-      width: WIDTH,
-      borderRadius: 10,
-
+      padding: 20,
+      borderRadius: 20,
+      elevation: 2,
+      marginHorizontal: 20,
+      backgroundColor: "white",
+      with: WIDTH - 40,
     },
     favoriteContainer: {
       position: "absolute",
-      top: 10,
-      right: 40,
+      top: 15,
+      right: 20,
       zIndex: 10,
       padding: 10,
     },
@@ -136,7 +141,7 @@ import { useStore } from "../Store/zustandStore";
       position: "absolute",
       flexDirection: "row",
       justifyContent: "center",
-      top: HEIGHT - 20,
+      top: HEIGHT ,
       alignSelf: "center",
     },
     dot: {
