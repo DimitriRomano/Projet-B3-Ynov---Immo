@@ -9,29 +9,19 @@ import Profile from "../components/ProfileScreen";
 import PropertyDetail from "../components/PropertyDetail";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { isAuthenticated } from "../store/zustandStore";
+import { useState } from "react";
+import { useStore } from "../store/zustandStore";
+import { logOut } from "../API/YmobilierApi";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
 
+
 function HomeStack() {
     return (
-        <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home} options={
-                {
-                    headerRight: () => (
-                        <TouchableHighlight
-                        onPress={() => alert('Je veux me déconnecter')}
-                        style={{ borderRadius: 10 }}
-                        >
-                        <View style={styles.deconnect}>
-                        {/* <Text style={{ color: "white" }}>Proposer une offre</Text>  */}
-                        <Ionicons name="ios-log-out" size={30} color="black" />
-                        </View>
-                    </TouchableHighlight>
-                    ),
-                }
-            } />
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="Home" component={Home} />
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="PropertyDetail" component={PropertyDetail} />
         </Stack.Navigator>
@@ -40,15 +30,17 @@ function HomeStack() {
 
 function ProfileStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Profile" component={Profile} />
         </Stack.Navigator>
     )
 }
 
+
+
 function FavoriteStack() {
     return (
-        <Stack.Navigator>
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="Home" component={Home} />
         </Stack.Navigator>
@@ -64,6 +56,7 @@ function LoginStack() {
 }
 
 export default function YmobilierTab(){
+    const [bearer, setBearer] = useStore((state) => [state.bearer, state.setBearer]);
     const authed = isAuthenticated();
     return (
         <NavigationContainer>

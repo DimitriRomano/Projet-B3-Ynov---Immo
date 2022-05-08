@@ -18,8 +18,12 @@ export default function Home() {
 
   const getUserProperties =  () => {
     getUser(bearer).then(res => {
-      setUser(res);
-      console.log(res);
+      if(res.message === "Unauthenticated."){
+        setBearer(undefined);
+      }else{
+        setUser(res);
+      }
+      //console.log(res);
     }).catch(err => {
       console.log('test error' + err);
     }).finally(() => {
@@ -38,7 +42,7 @@ export default function Home() {
            <Text style={{ color: 'grey' }}>France</Text> 
            <Text style={{ fontWeight: 'bold', fontSize: 20, width: 100 }}>{user.name}</Text> 
         </View> 
-        <Image style={styles.profilImage} size={80} source={{ uri: ipHome+'/'+user.image }} />
+        <Image style={styles.profilImage} size={80} source={{ uri: ipHome+user.image }} />
       </View>
       
         <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20}}>
@@ -51,7 +55,7 @@ export default function Home() {
           </View>
         </View>
       <ListProperties />
-      <StatusBar style="auto" />
+      <StatusBar hidden/>
       </>
       }
     </SafeAreaView>
@@ -68,6 +72,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: 20,
+    borderBottomWidth: 2,
+    marginBottom: 20,
+    borderBottomColor: '#f2f2f2',
   },
   profilImage: {
     height: 50,

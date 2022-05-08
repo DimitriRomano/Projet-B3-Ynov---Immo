@@ -7,10 +7,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage'
 export const useStore = create(
     persist( 
         set => ({
-        bearer: '',
+        bearer: undefined,
         properties: [],
         setBearer: bearer => set(state => ({ bearer: state.bearer = bearer })),
         setProperties: properties => set(state => ({ properties: state.properties = properties })),
+        logOut: () => set(state => ({ bearer: state.bearer = undefined })),
         }),
         {
             name: 'bearer-storage',
@@ -21,7 +22,6 @@ export const useStore = create(
 
 export function isAuthenticated() {
     const bearer = useStore((state) =>state.bearer);
-    return bearer !== '';
-        
+    return bearer !== undefined;
 } 
 

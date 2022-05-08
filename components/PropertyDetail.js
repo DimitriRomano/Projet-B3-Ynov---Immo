@@ -16,7 +16,7 @@ const PropertyDetail = ({navigation, route}) => {
     const itemId  = route.params.id;
     const [favoriteItem, setFavoriteItem] = useState(route.params.isFavorite);
     const [bearer, setBearer] = useStore((state) =>[ state.bearer, state.setBearer]);
-
+    
 
     const InteriorImage = ({image}) => {
         return <Image source={{uri : image.url}} style={style.interiorImage} />
@@ -68,8 +68,9 @@ const PropertyDetail = ({navigation, route}) => {
 
     const postReservation = (itemId) => {
         postSendReservation(bearer,itemId).then(res => {
-            console.log(res);
-            console.log(bearer);
+            if(res.error){
+                alert(res.error);
+            }
         }).catch(err => {
             console.log('error log property ' + err);
         }).finally(() => {

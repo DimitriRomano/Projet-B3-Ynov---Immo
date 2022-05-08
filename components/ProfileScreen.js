@@ -1,5 +1,5 @@
 import React, {useState, useEffect } from 'react';
-import { View, Button, StyleSheet, Image, FlatList, ActivityIndicator, SafeAreaView } from 'react-native';
+import { View, Button, StyleSheet, Image, FlatList, ActivityIndicator, SafeAreaView, Pressable } from 'react-native';
 import { Avatar, Title, Caption, Text, TouchableRipple } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useStore } from '../store/zustandStore';
@@ -7,6 +7,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useIsFocused } from '@react-navigation/native';
 import { getUserUserReservations } from '../API/YmobilierApi';
 import { ipHome } from '../API/YmobilierApi';
+import { Ionicons } from "@expo/vector-icons";
 
 
 const ProfileScreen = () => {
@@ -15,6 +16,7 @@ const ProfileScreen = () => {
     const [bearer, setBearer] = useStore((state) => [state.bearer, state.setBearer]);
     const navigation = useNavigation();
     const isFocused = useIsFocused();
+    
 
     const getUserProperties =  () => {
         getUserUserReservations(bearer).then(res => {
@@ -24,6 +26,24 @@ const ProfileScreen = () => {
         }).finally(() => {
             setLoading(false);
         });
+    }
+
+    const getParsedDate = (strDate) =>{
+        var strSplitDate = String(strDate).split(' ');
+        var date = new Date(strSplitDate[0]);
+        // alert(date);
+        var dd = date.getDate();
+        var mm = date.getMonth() + 1; //January is 0!
+    
+        var yyyy = date.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        date =  dd + "-" + mm + "-" + yyyy;
+        return date.toString();
     }
 
     const getColorFromStatus = (status) => {
@@ -46,7 +66,7 @@ const ProfileScreen = () => {
                     <Text style={styles.text}>{item.property_id}</Text>
                 </View>
                 <View style={{ flexDirection: 'row' }}>
-                    <Text style={styles.text}>05/10/2022 </Text>
+                    <Text style={styles.text}>{getParsedDate(item.created_at)}</Text>
                 </View>
                 <View>
                     <Text style={[styles.text, {
@@ -67,11 +87,19 @@ const ProfileScreen = () => {
         <SafeAreaView style={styles.container}>
             <View style={styles.userInfoSection}>
                 <View style={{ flexDirection: 'row', marginTop: 15 }}>
-                    <Avatar.Image size={80} source={{ uri: ipHome+'/'+data.image }} /> 
+                    <Avatar.Image size={80} source={{ uri: ipHome+data.image }} /> 
                     <View style={{ marginLeft: 20 }}>
                         <Title style={[styles.title, {marginTop: 15, marginBottom:5}]}>{data.name}</Title>
                             <Caption style={styles.caption}>@{data.name}</Caption>
                     </View>
+                    <Pressable
+                            style={{ position: 'absolute', top: 15, right: 0 }}
+                            onPress={() => { setBearer(undefined) }}
+                            >
+                            <Ionicons
+                                name="ios-log-out" size={30} color="black"
+                            />
+                    </Pressable>
                 </View>
             </View> 
 
@@ -118,6 +146,8 @@ const ProfileScreen = () => {
                         />
                     </View>
             </View>
+            
+
         </SafeAreaView>
     );
 }
