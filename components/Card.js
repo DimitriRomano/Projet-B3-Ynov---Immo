@@ -125,8 +125,8 @@ import { useStore } from "../store/zustandStore";
     },
     favoriteContainer: {
       position: "absolute",
-      top: 10,
-      right: 40,
+      top: 15,
+      right: 20,
       zIndex: 10,
       padding: 10,
     },
@@ -141,7 +141,7 @@ import { useStore } from "../store/zustandStore";
       position: "absolute",
       flexDirection: "row",
       justifyContent: "center",
-      top: HEIGHT - 20,
+      top: HEIGHT ,
       alignSelf: "center",
     },
     dot: {
