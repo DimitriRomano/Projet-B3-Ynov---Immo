@@ -2,7 +2,7 @@ import React from "react";
 import { View, StyleSheet, ImageBackground, Text, ActivityIndicator, Pressable, Image, Dimensions, TouchableHighlight } from "react-native";
 import { FlatList, ScrollView } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
-import { detailProperty, toggleFavorite } from "../API/YmobilierApi";
+import { detailProperty, toggleFavorite, postSendReservation } from "../API/YmobilierApi";
 import { useState, useEffect } from "react";
 import { useStore } from "../store/zustandStore";
 import { ipHome } from "../API/YmobilierApi";
@@ -66,9 +66,23 @@ const PropertyDetail = ({navigation, route}) => {
         });
     }
 
+    const postReservation = (itemId) => {
+        postSendReservation(bearer,itemId).then(res => {
+            console.log(res);
+            console.log(bearer);
+        }).catch(err => {
+            console.log('error log property ' + err);
+        }).finally(() => {
+            setLoading(false);
+        }
+        );
+    }
+
     useEffect(() => {
         getPropertyDetail(itemId);
     }, [favoriteItem]);
+
+    
 
 
 
@@ -148,7 +162,7 @@ const PropertyDetail = ({navigation, route}) => {
                         <Text style={{ color: "grey", fontWeight: 'bold' }} > Total Price </Text>
                     </View>
                     <TouchableHighlight
-                        onPress={() => console.log('Reservation ok')}
+                        onPress={() => postReservation(itemId)}
                         style={{ borderRadius: 10 }}
                     >
                         <View style={style.reservationBtn}>

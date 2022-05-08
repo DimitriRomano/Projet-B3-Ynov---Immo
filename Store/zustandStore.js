@@ -20,15 +20,8 @@ export const useStore = create(
 );
 
 export function isAuthenticated() {
-    try{
-        const bearer = useStore((state) =>state.bearer);
-        if(bearer !== '') {
-            return 'yes';
-        } else {
-            return 'no';
-        }
-    }catch(err){
-        return 'no';
-    }
+    const bearer = useStore((state) =>state.bearer);
+    return bearer !== '';
+        
 } 
 

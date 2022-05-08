@@ -106,3 +106,37 @@ export const getUserUserReservations = async (bearer) => {
     }
 }
 
+export const postSendReservation = async (bearer,id) => {
+    try {
+        const res = await fetch(`${ipHome}/api/reservations/${id}`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${bearer}`,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        let responJson = await res.json();
+        return responJson;
+    } catch (err) {
+        return console.error(err);
+    }
+}
+
+export const logOut = async (bearer) => {
+    try {
+        const res = await fetch(`${ipHome}/api/logout`, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${bearer}`,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        let responJson = await res.json();
+        return responJson;
+    } catch (err) {
+        return console.error(err);
+    }
+}
+

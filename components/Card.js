@@ -16,6 +16,7 @@ import { useStore } from "../store/zustandStore";
   
   export default function Card({
     id,
+    main_image,
     images,
     heading,
     subheading,
@@ -37,8 +38,8 @@ import { useStore } from "../store/zustandStore";
     const [favoriteItem, setFavoriteItem] = useState(favorite);
   
     const handleFavoriteItemClicked = () => {
-        toggleFavorite(bearer, id).then(res => {
-          console.log(res);
+        toggleFavorite(id,bearer).then(res => {
+          setFavoriteItem(!favoriteItem);
         }).catch(err => {
           console.log('test error' + err);
         }
@@ -64,22 +65,24 @@ import { useStore } from "../store/zustandStore";
           />
         </Pressable>
         {/* Images */}
-        <FlatList
-          data={images}
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item) => item.id}
-          ref={(ref) => (flatListRef.current = ref)}
-          snapToAlignment="center"
-          pagingEnabled
-          viewabilityConfig={viewConfigRef}
-          onViewableItemsChanged={onViewRef.current}
-          renderItem={({ item }) => (
-            <Pressable onPress={onPress} style={styles.imageContainer}>
-              <Image style={styles.image} source={{ uri: item.url }} />
-            </Pressable>
-          )}
-        />
+        <View>
+          <FlatList
+            data={images}
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item) => item.id}
+            ref={(ref) => (flatListRef.current = ref)}
+            snapToAlignment="center"
+            pagingEnabled
+            viewabilityConfig={viewConfigRef}
+            onViewableItemsChanged={onViewRef.current}
+            renderItem={({ item }) => (
+              <Pressable onPress={onPress} style={styles.imageContainer}>
+                <Image style={styles.image} source={{ uri: item.url }} />
+              </Pressable>
+            )}
+          />
+        </View>
         {/*  Dot Container */}
         {images.length > 1 && (
           <View style={styles.dotContainer}>
@@ -113,10 +116,12 @@ import { useStore } from "../store/zustandStore";
   const styles = StyleSheet.create({
     cardContainer: {
       marginTop: 20,
-      paddingHorizontal: 30,
-      width: WIDTH,
-      borderRadius: 10,
-
+      padding: 20,
+      borderRadius: 20,
+      elevation: 2,
+      marginHorizontal: 20,
+      backgroundColor: "white",
+      with: WIDTH - 40,
     },
     favoriteContainer: {
       position: "absolute",

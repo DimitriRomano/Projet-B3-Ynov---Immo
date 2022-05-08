@@ -32,7 +32,7 @@ export default function ListProperties() {
 
 
   return (
-    <View>
+    <View style={{ marginTop: 10 }}>
       {isLoading ? <ActivityIndicator/> :
       <FlatList
         data={data}

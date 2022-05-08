@@ -14,15 +14,15 @@ const ProfileScreen = () => {
     const [isLoading, setLoading] = useState(true);
     const [bearer, setBearer] = useStore((state) => [state.bearer, state.setBearer]);
     const navigation = useNavigation();
+    const isFocused = useIsFocused();
 
     const getUserProperties =  () => {
         getUserUserReservations(bearer).then(res => {
           setData(res);
-          //console.log(res);
         }).catch(err => {
           console.log('test error' + err);
         }).finally(() => {
-          
+            setLoading(false);
         });
     }
 
@@ -41,12 +41,12 @@ const ProfileScreen = () => {
         return (
             <View style={[{ flexDirection: 'row', marginHorizontal: 20, justifyContent:'space-around', borderRadius: 30, shadowColor: "#000",
             }, styles.shadowProp]}>
-                <View style={{ flexDirection: 'row' }}>
+                <View style={{ flexDirection: 'row', marginLeft: 5 }}>
                     <Text style={styles.text}>Propriété no </Text>
                     <Text style={styles.text}>{item.property_id}</Text>
                 </View>
-                <View>
-                    <Text style={styles.text}>05/10/20 </Text>
+                <View style={{ flexDirection: 'row' }}>
+                    <Text style={styles.text}>05/10/2022 </Text>
                 </View>
                 <View>
                     <Text style={[styles.text, {
@@ -61,7 +61,7 @@ const ProfileScreen = () => {
     
       useEffect(() => {
         getUserProperties();
-      }, [bearer]);
+      }, [bearer, isFocused]);
     
     return (
         <SafeAreaView style={styles.container}>

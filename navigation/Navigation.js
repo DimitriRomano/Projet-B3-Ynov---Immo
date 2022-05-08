@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
-import { StyleSheet } from "react-native";
+import { StyleSheet, Button, TouchableHighlight, View, Text } from "react-native";
 import Home from "../components/HomeScreen";
 import Favorite from "../components/FavoriteScreen";
 import LogIn from "../components/LogIn";
@@ -17,7 +17,21 @@ const Tab = createBottomTabNavigator();
 function HomeStack() {
     return (
         <Stack.Navigator>
-            <Stack.Screen name="Home" component={Home}  />
+            <Stack.Screen name="Home" component={Home} options={
+                {
+                    headerRight: () => (
+                        <TouchableHighlight
+                        onPress={() => alert('Je veux me déconnecter')}
+                        style={{ borderRadius: 10 }}
+                        >
+                        <View style={styles.deconnect}>
+                        {/* <Text style={{ color: "white" }}>Proposer une offre</Text>  */}
+                        <Ionicons name="ios-log-out" size={30} color="black" />
+                        </View>
+                    </TouchableHighlight>
+                    ),
+                }
+            } />
             <Stack.Screen name="Favorites" component={Favorite} />
             <Stack.Screen name="PropertyDetail" component={PropertyDetail} />
         </Stack.Navigator>
@@ -65,7 +79,7 @@ export default function YmobilierTab(){
                 <Tab.Screen 
                     name="HomeTabScreen" 
                     component={HomeStack}
-                    optidons={{
+                    options={{
                         tabBarLabel: 'Home',
                         headerShown: false,
                         tabBarIcon: () => {
@@ -128,7 +142,11 @@ const styles = StyleSheet.create({
         icon: {
           width: 30,
           height: 30
-        }
+        },
+        deconnect: {
+            borderRadius: 10,
+            padding: 10,
+        },
 })
 
 
