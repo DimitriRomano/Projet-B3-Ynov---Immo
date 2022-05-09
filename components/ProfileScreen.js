@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useStore } from '../store/zustandStore';
 import { useNavigation } from '@react-navigation/native';
 import { useIsFocused } from '@react-navigation/native';
-import { getUserUserReservations } from '../API/YmobilierApi';
+import { getUserUserReservations, logOut } from '../API/YmobilierApi';
 import { ipHome } from '../API/YmobilierApi';
 import { Ionicons } from "@expo/vector-icons";
 
@@ -94,7 +94,13 @@ const ProfileScreen = () => {
                     </View>
                     <Pressable
                             style={{ position: 'absolute', top: 15, right: 0 }}
-                            onPress={() => { setBearer(undefined) }}
+                            onPress={() => { 
+                                logOut(bearer).then(res => {
+                                    setBearer(undefined) }
+                                ).catch(err => {
+                                    console.log('test error' + err);
+                                })
+                            }}
                             >
                             <Ionicons
                                 name="ios-log-out" size={30} color="black"

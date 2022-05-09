@@ -1,4 +1,4 @@
-export const ipHome = 'https://a113-2a01-cb19-8374-7700-cce1-f88e-493b-c36a.eu.ngrok.io'
+export const ipHome = 'https://fb8f-85-169-101-162.eu.ngrok.io'
 
 export const getProperties = async (bearer) => {
     try {
