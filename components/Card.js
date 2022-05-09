@@ -46,12 +46,6 @@ import { useStore } from "../store/zustandStore";
       );
     };
 
-    
-
-    
-
-    
-  
     return (
       <View style={[styles.cardContainer, style]} {...rest}>
         <Pressable
