@@ -53,7 +53,7 @@ const ProfileScreen = () => {
             case 'approved':
                 return 'green';
             case 'pending':
-                return 'yellow';
+                return 'blue';
         }
     }
 

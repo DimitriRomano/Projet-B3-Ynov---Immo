@@ -43,6 +43,7 @@ export default function ListProperties() {
             id={item.id}
             heading={item.title}
             images={item.images}
+            main_image={item.main_image}
             subheading={item.price}
             stars={item.surface}
             favorite={item.is_favorite}
