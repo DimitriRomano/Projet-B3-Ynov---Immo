@@ -8,9 +8,8 @@ import LogIn from "../components/LogIn";
 import Profile from "../components/ProfileScreen";
 import PropertyDetail from "../components/PropertyDetail";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { isAuthenticated } from "../store/zustandStore";
+import { isAuthenticated, useStore } from "../store/zustandStore";
 import { useState } from "react";
-import { useStore } from "../store/zustandStore";
 import { logOut } from "../API/YmobilierApi";
 
 const Stack = createNativeStackNavigator();

@@ -116,7 +116,7 @@ const PropertyDetail = ({navigation, route}) => {
                 <View style={style.detailsContainer}>
                     {/* Container infos générales */}
                     <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
-                        <Text style={{ fontSize: 20, fontWeight: 'bold', alignSelf:"stretch", flexShrink: 1}}  >{data.title}</Text>
+                        <Text style={{ fontSize: 20, fontWeight: 'bold', alignSelf:"stretch", width: 250, flexShrink: 1}}  >{data.title}</Text>
                         <View style= {{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={style.spaceTag}>
                                 <Text style={{ color : "white" }}>{data.nb_rooms}</Text>
