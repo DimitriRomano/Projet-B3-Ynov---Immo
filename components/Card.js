@@ -46,16 +46,6 @@ import { useStore } from "../store/zustandStore";
       );
     };
 
-    const listImages = (images) =>{
-        const list = images.map((image) => {
-          image.id = image.id+1;
-         } );
-         console.log(list);
-    };
-
-    useEffect(() => {
-      listImages(images);
-    },[]);
     return (
        
       <View style={[styles.cardContainer, style]} {...rest}>

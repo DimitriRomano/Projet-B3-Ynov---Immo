@@ -167,7 +167,7 @@ const PropertyDetail = ({navigation, route}) => {
                         style={{ borderRadius: 10 }}
                     >
                         <View style={style.reservationBtn}>
-                        <Text style={{ color: "white" }}>Proposer une offre</Text> 
+                        <Text style={{ color: "white" }}>Demander visite</Text> 
                         </View>
                     </TouchableHighlight>
                 </View>
